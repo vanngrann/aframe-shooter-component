@@ -263,44 +263,6 @@ document.querySelector('#right-hand').addEventListener('triggerdown', () => {
 </a-camera>
 ```
 
----
-
-## Publishing to npm (unpkg setup)
-
-Once your repo is ready:
-
-```bash
-# 1. Make sure package.json has "name" and "version" set, and "main" points to the JS file
-#    "main": "aframe-shooter-component.js"
-
-# 2. Login and publish
-npm login
-npm publish
-
-# 3. Your script tag is then live at:
-# https://unpkg.com/aframe-shooter-component@<version>/aframe-shooter-component.js
-```
-
-Minimum `package.json`:
-
-```json
-{
-  "name": "aframe-shooter-component",
-  "version": "1.0.0",
-  "description": "A-Frame shooting mechanics — bullets, hit detection, health, death",
-  "main": "aframe-shooter-component.js",
-  "keywords": ["aframe", "aframe-component", "webxr", "shooter", "vr"],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-username/aframe-shooter-component.git"
-  }
-}
-```
-
-unpkg serves any file from any npm package automatically — no extra configuration required.
-
----
 
 ## How it works
 
