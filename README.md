@@ -52,33 +52,46 @@ Download `aframe-shooter-component.js` and serve it yourself:
 
 ## Quick start
 
-```html
-<!DOCTYPE html>
-<html>
+```html<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title>A-Frame Shooter</title>
   <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-  <script src="https://unpkg.com/aframe-shooter-component@1.0.0/aframe-shooter-component.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/vanngrann/aframe-shooter-component@1.0.0/aframe-shooter-component.js"></script>
+
 </head>
 <body>
-  <a-scene>
 
-    <!-- Target: needs class + shootable component + material attribute -->
-    <a-box
-      class="shootable"
-      shootable="health: 3; hitRadius: 0.8"
-      position="0 1.5 -5"
-      material="color: teal">
-    </a-box>
+<a-scene background="color: #111122">
 
-    <!-- Camera is the gun -->
-    <a-camera
-      shooter="poolSize: 6; damage: 1"
-      position="0 1.6 0"
-      wasd-controls
-      look-controls>
-    </a-camera>
+  <!-- ── Targets ─────────────────────────────────────────────────────────────
+       Requirements:
+         1. class="shootable"          (so the shooter can querySelector them)
+         2. shootable="..."            (the component handles HP and flash)
+         3. material="color: ..."      (must use material attr, not bare color)
+  ──────────────────────────────────────────────────────────────────────────── -->
 
-  </a-scene>
+  <a-box class="shootable" shootable="health: 3; hitRadius: 0.75" position="-2.5 1.5 -6" material="color: #22d3ee"></a-box>
+
+  <a-sphere class="shootable" shootable="health: 5; hitRadius: 1.0" position="0 1.8 -8" radius="0.9" material="color: #a855f7"></a-sphere>
+
+  <a-cylinder class="shootable" shootable="health: 2; hitRadius: 0.7" position="2.5 1 -6" radius="0.6" height="2" material="color: #4ade80"></a-cylinder>
+
+
+  <a-plane rotation="-90 0 0" width="40" height="40" material="color: #0d0d1a; roughness: 1"></a-plane>
+  <a-sky color="#111122"></a-sky>
+
+  <a-light type="ambient" color="#ffffff" intensity="0.6"></a-light>
+  <a-light type="directional" color="#ffffff" intensity="1.0" position="2 6 3"></a-light>
+
+
+  <a-camera shooter="bulletColor:  #facc15; bulletRadius: 0.08; bulletSpeed: 20; bulletDamage: 1; bulletMaxAge: 3000; poolSize: 20; cooldown: 150; autoFire: false; targetClass: .shootable" position="0 1.6 0" wasd-controls look-controls>
+    <a-ring radius-inner="0.006" radius-outer="0.01" position="0 0 -0.75" material="color: white; shader: flat"></a-ring>
+  </a-camera>
+
+</a-scene>
+
 </body>
 </html>
 ```
