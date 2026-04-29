@@ -1,0 +1,23 @@
+{
+  "name": "aframe-shooter-component",
+  "version": "1.0.0",
+  "description": "A-Frame shooting mechanics — bullets, hit detection, health, and death. No dependencies beyond A-Frame.",
+  "main": "aframe-shooter-component.js",
+  "keywords": [
+    "aframe",
+    "aframe-component",
+    "webxr",
+    "webvr",
+    "shooter",
+    "vr",
+    "game"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vanngrann/aframe-shooter-component.git"
+  },
+  "peerDependencies": {
+    "aframe": ">=1.4.0"
+  }
+}
