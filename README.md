@@ -1,6 +1,5 @@
 # aframe-shooter-component
 
-# aframe-shooter-component
 
 > First-person shooting mechanics for [A-Frame](https://aframe.io) — bullets, hit detection, health, and death, with no dependencies beyond A-Frame itself.
 
